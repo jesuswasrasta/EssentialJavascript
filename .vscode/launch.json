@@ -50,7 +50,9 @@
 			"program": "${workspaceRoot}/node_modules/mocha/bin/mocha", // Workspace relative or absolute path to the program.
 			"stopOnEntry": false, // Automatically stop program after launch.
 			"args": [  // Command line arguments passed to the program.
-                "test/item-02.js",
+                //"test/item-02.js", //Run tests in a single file
+                 "test", //Run test in a folder
+                 "--recursive", //Run all test in all .js file in all folders and subfolders
                 "--no-timeouts",
                 "--max_old_space_size=2048",
                 "--colors"              
