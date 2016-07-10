@@ -1,0 +1,63 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "node launch",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/app.js",
+            "stopOnEntry": false,
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "externalConsole": false,
+            "sourceMaps": false,
+            "outDir": null
+        },
+        {
+            "name": "node attach localhost",
+            "type": "node",
+            "request": "attach",
+            "port": 5858,
+            "address": "localhost",
+            "restart": false,
+            "sourceMaps": false,
+            "outDir": null,
+            "localRoot": "${workspaceRoot}",
+            "remoteRoot": null
+        },
+        {
+            "name": "node attach to process",
+            "type": "node",
+            "request": "attach",
+            "processId": "${command.PickProcess}",
+            "port": 5858,
+            "sourceMaps": false,
+            "outDir": null
+        },      
+        {
+            //Mocha
+			"name": "mocha", // Name of configuration; appears in the launch configuration drop down menu.
+			"type": "node", // Type of configuration. Possible values: "node", "mono".
+            "request": "launch",
+			"program": "${workspaceRoot}/node_modules/mocha/bin/mocha", // Workspace relative or absolute path to the program.
+			"stopOnEntry": false, // Automatically stop program after launch.
+			"args": [  // Command line arguments passed to the program.
+                "test/item-02.js",
+                "--no-timeouts",
+                "--max_old_space_size=2048",
+                "--colors"              
+                ],
+			"cwd": "${workspaceRoot}", // Workspace relative or absolute path to the working directory of the program being debugged. Default is the current workspace.
+			"runtimeExecutable": null, // Workspace relative or absolute path to the runtime executable to be used. Default is the runtime executable on the PATH.
+			"env": { "NODE_ENV": "production"} // Environment variables passed to the program.
+		}
+    ]
+}
